@@ -1,4 +1,5 @@
 import React from 'react';
+import Breadcrumbs from './breadcrumbs';
 import QuickstartList from './quickstart-list';
 import PlatformList from './platform-list';
 import TutorialStore from '../stores/tutorial-store';
@@ -12,9 +13,12 @@ class TutorialNavigator extends React.Component {
 
     let picker = undefined;
     let question = undefined;
+    let breadcrumbs = undefined;
+
     if (quickstart) {
-      picker = <PlatformList quickstart={quickstart} {...this.props} />;
+      picker = <PlatformList {...this.props} />;
       question = quickstart.question;
+      breadcrumbs = <Breadcrumbs {...this.props} />;
     }
     else {
       picker = <QuickstartList quickstarts={quickstarts} {...this.props} />;
@@ -28,6 +32,7 @@ class TutorialNavigator extends React.Component {
             <div className="container">
               <h1>Documentation</h1>
               <p className='question-text'>{question}</p><br/>
+              {breadcrumbs}
             </div>
             {picker}
           </div>
