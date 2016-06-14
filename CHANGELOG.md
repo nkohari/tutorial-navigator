@@ -1,3 +1,66 @@
+## [3.1.1] - 2015-11-17
+
+### Fixed
+
+- [] Set production flag for prod builds. Removed uglify mangling. (`mcabral`)
+  https://github.com/auth0/tutorial-navigator/commit/a876e8f169ec3d2afb70e6e97098432d43841ab9
+- [] Fixed and removed broken tests (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/ded69e78777fb3c4224158b608f640b1b3a7d4a6
+- [] 3.1.0 (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/addf3478d3f8fbf809e38198ef4771b4730c8bec
+- [] Merge pull request #41 from nkohari/minor-fixes-for-v3 (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/bbb3b0e82a1d3a214ee6df8f530e2cb2458430f5
+- [] Fix: Show breadcrumbs when selecting a platform (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/25511186cc0a931472b76047385687da0d095d43
+- [] Merge pull request #40 from ntotten/v3 (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/02d73ec99713e79219a01591ac0e9f8a93135762
+- [] Version bump 3.0.1 (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/21816df2267dfd5c3822764e0c0654e28e2452f7
+- [] Merge pull request #39 from nkohari/master (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/e6257a074a1791a3467900cfa7683260590365ea
+- [] Bump revision (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/1854094cae8c58555c86fcfa22dc5870237ac455
+- [] Added restricted option to lock into a single app type, style tweaks (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/f1a0a548987a948ba6528a9bddbcbe34c6047b2f
+- [] Tweaks for standalone version (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/52da1b46d28836028c32fafe9adda55e6bcbab47
+- [] Fixed custom context, etc. for standalone version; fixed example (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/32054c3d220fc63fd1c34e3afbd1ba5d3fbb13b3
+- [] Only display article in breadcrumbs if there are multiple articles for the platform (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/50e59323eeb19a9f97f5281adeb5ac1820957cd2
+- [] Fix for module exports (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/eb9813a76f3c2621b82ded3c811bd3006dadde0b
+- [] Style tweaks (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/9db9a6d62fe918b902a606632232d58b4fa75289
+- [] Fix for server-side rendering of articles (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/4c5e4ea3a70c1fbf2a5c57fee766951268d3fc6c
+- [] More cleanup, moving to rich props (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/7f7bab185871ef233b3a13f13526b8b1c6eaa0b1
+- [] Code cleanup (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/37414093e5635eb48a586011ede62cfd5f8b31b9
+- [] Now supports multiple steps per tutorial (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/fd69c5f7b8ac83a25248625d15c177ed38cd6381
+- [] Reworking action flow to match new data model, added tutorial TOC component (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/2bdca602831df75c7df4c03ed6982d5cb3ef8db4
+- [] Working to match new data model (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/98a81033e8e957c2b69a701cded5a33df9156427
+- [] Removed tech2 paths, restructuring around multiple articles per platform (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/fbbc20db2d089a63b86e5204de61cc997b4a2064
+- [] Bringing versions in line with docs site (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/85f2cedb2f0e0899751b6eac5b1a18cd39797f6d
+- [] Less specific dependancies, fixed ranges (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/737d68a90084e0c2df5cc2b8bedc5f7c14d242d0
+- [] Less specific dependancies (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/7f52ac5ff74a68c6e8411896f31a92ee37998489
+- [] Merge pull request #38 from ntotten/module_updates (`Jerrie Pelser`)
+  https://github.com/auth0/tutorial-navigator/commit/6b3b1570eced15df3136c3a9762ba885a7b951a0
+- [] Upgraded fluxible router (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/79c9bc6dd6a5b95861a859a49dcd55066a37f3d3
+- [] Merge pull request #37 from aguerere/fix-issue36-license-and-readme (`Cristian Douce`)
+  https://github.com/auth0/tutorial-navigator/commit/fd005c4e774734c45d12877ef8cb2e60f3249479
+- [] License file added and readme edited (`Alberto Güerere`)
+  https://github.com/auth0/tutorial-navigator/commit/5d3b1b8e824b7d88100401fc8bda91072f0b459c
+
 ## [1.0.2] - 2015-11-12
 
 ### Fixed
