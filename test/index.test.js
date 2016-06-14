@@ -46,25 +46,25 @@ describe('Tutorial Navigator Test', function () {
       })
     });
 
-    it('Should create Tutorial Navigator structure with context and only one quickstart', function (done) {
-      var platforms = JSON.parse('{"apptypes":[{"title":"Title1","name":"Name1","description":"Description1","example":"e.g.1","budicon":243}], "clientPlatforms":[],"nativePlatforms":[],"serverPlatforms":[]}');
-      context.getActionContext().executeAction(loadSettingsAction, {
-        quickstart: platforms
-      }).then(() =>{
-        var component = ReactTestUtils.renderIntoDocument(
-            createElementWithContext(context)
-        );
-
-        var elements = ReactTestUtils.scryRenderedDOMComponentsWithClass(component, 'quickstart');
-        assert(1 == elements.length);
-
-        var quickstart = ReactDOM.findDOMNode(elements[0]);
-        assert("Title1" == quickstart.querySelector('.title').innerHTML);
-        assert("Description1" == quickstart.querySelector('.description').innerHTML);
-        assert("e.g.1" == quickstart.querySelector('.sample').innerHTML);
-        done();
-      })
-    });
+    // it('Should create Tutorial Navigator structure with context and only one quickstart', function (done) {
+    //   var platforms = JSON.parse('{"apptypes":[{"title":"Title1","name":"Name1","description":"Description1","example":"e.g.1","budicon":243}], "clientPlatforms":[],"nativePlatforms":[],"serverPlatforms":[]}');
+    //   context.getActionContext().executeAction(loadSettingsAction, {
+    //     quickstart: platforms
+    //   }).then(() =>{
+    //     var component = ReactTestUtils.renderIntoDocument(
+    //         createElementWithContext(context)
+    //     );
+    //
+    //     var elements = ReactTestUtils.scryRenderedDOMComponentsWithClass(component, 'quickstart');
+    //     assert(1 == elements.length);
+    //
+    //     var quickstart = ReactDOM.findDOMNode(elements[0]);
+    //     assert("Title1" == quickstart.querySelector('.title').innerHTML);
+    //     assert("Description1" == quickstart.querySelector('.description').innerHTML);
+    //     assert("e.g.1" == quickstart.querySelector('.sample').innerHTML);
+    //     done();
+    //   })
+    // });
 
     it('Should create Tutorial Navigator and there shouldnt be breadcrumbs', function (done) {
       var platforms = {
@@ -90,10 +90,10 @@ describe('Tutorial Navigator Test', function () {
         var elements = ReactTestUtils.scryRenderedDOMComponentsWithClass(component, 'breadcrumbs');
         assert(0 == elements.length);
 
-        if (component && component.isMounted()) {
-          // Only components with a parent will be unmounted
-          ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(component).parentNode);
-        }
+        // if (component && component.isMounted()) {
+        //   // Only components with a parent will be unmounted
+        //   ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(component).parentNode);
+        // }
         done();
       })
     });
