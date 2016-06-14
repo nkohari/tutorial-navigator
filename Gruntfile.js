@@ -72,7 +72,15 @@ module.exports = function (grunt) {
         ]
       }
     },
+    env: {
+      build: {
+        NODE_ENV: "production"
+      }
+    },
     uglify: {
+      options: {
+        mangle: false
+      },
       noConflict: {
         files: {
           'build/tutorial-navigator.standalone.noconflict.min.js': ['build/tutorial-navigator.standalone.noconflict.js'],
@@ -299,10 +307,11 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-aws-s3');
   grunt.loadNpmTasks('grunt-http');
+  grunt.loadNpmTasks("grunt-env");
 
-  grunt.registerTask('build-both',            ['clean:build', 'stylus', 'cssmin', 'browserify:build', 'browserify:noConflict', 'uglify:build', 'uglify:noConflict' ]);
-  grunt.registerTask('build-no-conflict',     ['clean:build', 'stylus', 'cssmin', 'browserify:noConflict', 'uglify:noConflict' ]);
-  grunt.registerTask('build',                 ['clean:build', 'stylus', 'cssmin', 'browserify:build', 'uglify:build' ]);
+  grunt.registerTask('build-both',            ['env:build', 'clean:build', 'stylus', 'cssmin', 'browserify:build', 'browserify:noConflict', 'uglify:build', 'uglify:noConflict' ]);
+  grunt.registerTask('build-no-conflict',     ['env:build', 'clean:build', 'stylus', 'cssmin', 'browserify:noConflict', 'uglify:noConflict' ]);
+  grunt.registerTask('build',                 ['env:build', 'clean:build', 'stylus', 'cssmin', 'browserify:build', 'uglify:build' ]);
   grunt.registerTask('dev-no-conflict',       ['clean:build', 'stylus', 'browserify:noConflict', 'connect:dev', 'watch' ]);
   grunt.registerTask('dev',                   ['clean:build', 'stylus', 'browserify:build', 'connect:dev', 'watch' ]);
   grunt.registerTask('purge_cdn_dev',         ['http:purge_js_dev']);
