@@ -8,8 +8,7 @@ class Platform extends React.Component {
     let {quickstart, platform, customNavigationAction} = this.props;
     let payload = {
       quickstartId: quickstart.name,
-      platformId: platform.name,
-      articleId: platform.articles[0].name
+      platformId: platform.name
     };
     if (customNavigationAction) {
       this.context.executeAction(customNavigationAction, payload);

@@ -48,7 +48,7 @@ class Breadcrumbs extends React.Component {
     
     if (platform) {
       crumbs.push(
-        <a key="platform" onClick={this.handleClick.bind(this, {quickstart, platform, article: platform.articles[0]})}>
+        <a key="platform" onClick={this.handleClick.bind(this, {quickstart, platform})}>
           <i className="icon-budicon-461"></i><span className="text">{platform.title}</span>
         </a>
       );
