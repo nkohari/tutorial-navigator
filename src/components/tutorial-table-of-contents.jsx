@@ -5,13 +5,15 @@ import navigateAction from '../action/navigate-action';
 
 class TutorialTableOfContents extends React.Component {
   
-  handleClick(article) {
+  handleClick(article, isFirst) {
     let {quickstart, platform, customNavigationAction} = this.props;
     let payload = {
       quickstartId: quickstart.name,
-      platformId: platform.name,
-      articleId: article.name
+      platformId: platform.name
     };
+    if (!isFirst) {
+      payload.articleId = article.name;
+    }
     if (customNavigationAction) {
       this.context.executeAction(customNavigationAction, payload);
     }
@@ -28,7 +30,8 @@ class TutorialTableOfContents extends React.Component {
     
     let items = platform.articles.map((article, index) => {
       let selected = (article.name == currentArticle.name) ? 'selected ' : '';
-      return <li key={index} className={selected + "tutorial-toc-article"} onClick={this.handleClick.bind(this, article)}>
+      let isFirst = (index == 0);
+      return <li key={index} className={selected + "tutorial-toc-article"} onClick={this.handleClick.bind(this, article, isFirst)}>
         {article.title}
       </li>
     });

@@ -10,7 +10,7 @@ ArticleService.loadArticle = function(quickstarts, payload) {
   if (quickstartId) tokens.push(quickstarts[quickstartId].slug);
   if (platformId)   tokens.push(platformId);
   if (articleId)    tokens.push(articleId);
-  
+
   let url = tokens.join('/') + "?e=1";
   if (clientId) url += `&a=${clientId}`;
   
