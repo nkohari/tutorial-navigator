@@ -5,6 +5,7 @@ import Breadcrumbs from './components/breadcrumbs';
 import Tutorial from './components/tutorial';
 import TutorialNavigator from './components/tutorial-navigator';
 import TutorialTableOfContents from './components/tutorial-table-of-contents';
+import TutorialPrevNext from './components/tutorial-prev-next';
 import ArticleService from './services/article-service';
 import ServiceKeys from './services/keys';
 import ArticleStore from './stores/article-store';
@@ -21,6 +22,7 @@ module.exports = {
   Tutorial,
   TutorialNavigator,
   TutorialTableOfContents,
+  TutorialPrevNext,
 
   // Stores
   ArticleStore,
