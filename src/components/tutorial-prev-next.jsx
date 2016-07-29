@@ -36,7 +36,7 @@ class TutorialPrevNext extends React.Component {
           <i className="icon-budicon-463" />{prevArticle.title}
         </a>;
       }
-      if (currentIndex < platform.articles.length) {
+      if (platform.articles.length > 1 && currentIndex < platform.articles.length) {
         let nextArticle = platform.articles[currentIndex + 1];
         next = <a className="tutorial-prevnext-next" onClick={this.handleClick.bind(this, nextArticle)}>
           {nextArticle.title} <i className="icon-budicon-461" />
