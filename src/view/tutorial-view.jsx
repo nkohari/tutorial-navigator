@@ -10,26 +10,25 @@ import { connectToStores, provideContext } from 'fluxible-addons-react';
 // Could this be generalized in some way so it could work in both places?
 
 class TutorialView extends React.Component {
-  
+
   renderTitle() {
     let {platform, article} = this.props;
     if (platform && article) {
-      if (platform.articles.length == 1) {
-        return platform.title;
-      }
-      else {
+      if (platform.articles.length === 1 || article.number === 0) {
+        return platform.title + " SDK Tutorial";
+      } else {
         return platform.title + " " + article.title;
       }
     }
-  }  
-  
+  }
+
   render() {
-    
+
     let {quickstart, platform, article} = this.props;
     let sidebar = null;
     let tutorial = null;
     let columnWidth = 12;
-    
+
     if (platform && platform.articles.length > 1) {
       columnWidth = 9
       sidebar = <div className="col-sm-3">
@@ -55,7 +54,7 @@ class TutorialView extends React.Component {
                   <span>Try Auth0 for FREE</span>
                   <a href="javascript:signup()" className="btn btn-success btn-lg">Create free Account</a>
                 </div>
-              </div>  
+              </div>
             </div>
           </div>
         </div>
