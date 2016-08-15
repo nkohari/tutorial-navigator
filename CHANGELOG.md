@@ -1,3 +1,38 @@
+## [3.4.1] - 2016-06-20
+
+### Fixed
+
+- [] Fix Each child in an array should have a unique "key" prop. (`Ramiro Silveyra d'Avila`)
+  https://github.com/auth0/tutorial-navigator/commit/82a6baca1eb1ec7c873e2b490ed1a851406bb06b
+- [] 3.4.0 (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/9b6dd415afa502941ac17ac0ed9b0ae95c7a21fa
+- [] Updated tutorial titles (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/2648c860478abbf64f01f05bbcc8640a9eded7d8
+- [] 3.3.2 (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/31997d3da0455d3575466251ba156de1578c572e
+- [] Update package.json (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/d0cff2fe51f8e834a1793d33fa22c183c92c5904
+- [] Version 3.3.1 (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/8451636187271c4ff05eaa264d214a4ac8c380cf
+- [] Merge pull request #48 from nkohari/prev-next-fix (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/8357b7405883a252e703737578a57d0f9b7d3009
+- [] Fix for error where TutorialPrevNext incorrectly tried to show a next link where none existed (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/0abe30244fab59eff0d7e10d37968518c7a5d3db
+- [] version 3.3.0 (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/ecd6d48e1ae48abf8c15dd916a51eb838038ec2f
+- [] Merge pull request #47 from nkohari/prev-next (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/2fdfbae3fde3465a3ef83107c988ad29967e16f1
+- [] Fix for platforms with a single article (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/6b110ae7885e5fb814727c74a7564b8a22595ab4
+- [] Merge pull request #46 from guillermoga88/master (`Nathan Totten`)
+  https://github.com/auth0/tutorial-navigator/commit/5782c2acd1ce5d21c8244eb95eef31bbe8917e79
+- [] Fix breadcrumb style (`Guillermo Gonzalez Aleman`)
+  https://github.com/auth0/tutorial-navigator/commit/ae35d3e892d44fbb3cfd17ff1546cf5d12dd0c77
+- [] Added microdata to Breadcrumbs (`Guillermo Gonzalez Aleman`)
+  https://github.com/auth0/tutorial-navigator/commit/f7eb678a08b6703150b8d8193f50e795e6adfff7
+- [] Added previous/next article link component, TutorialPrevNext (`Nate Kohari`)
+  https://github.com/auth0/tutorial-navigator/commit/059084463ccf284da13f2de57d6fe64a177ffa4d
+
 ## [3.1.1] - 2015-11-17
 
 ### Fixed
