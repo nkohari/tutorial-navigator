@@ -36,7 +36,7 @@ class Platform extends React.Component {
     var {platform} = this.props;
     return (
       <li className='animated scaleIn' style={this.getStyle()}>
-        <div data-name={platform.name} className='circle-logo' onClick={this.handleClick.bind(this)}>
+        <div data-name={platform.logo_name || platform.name} className='circle-logo' onClick={this.handleClick.bind(this)}>
           <div className='logo'></div>
           <div className='title'>{platform.title}</div>
         </div>
