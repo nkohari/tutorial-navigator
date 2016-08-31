@@ -9,7 +9,7 @@ class TutorialNavigator extends React.Component {
   
   render() {
     
-    let {quickstarts, quickstart} = this.props;
+    let {quickstarts, quickstart, firstQuestion} = this.props;
 
     let picker = undefined;
     let question = undefined;
@@ -22,7 +22,7 @@ class TutorialNavigator extends React.Component {
     }
     else {
       picker = <QuickstartList quickstarts={quickstarts} {...this.props} />;
-      question = "Getting started? Try our quickstarts."
+      question = firstQuestion;
     }
     
     return (
@@ -30,7 +30,6 @@ class TutorialNavigator extends React.Component {
         <div className='js-tutorial-navigator'>
           <div className="banner tutorial-wizard">
             <div className="container">
-              <h1>Documentation</h1>
               <p className='question-text'>{question}</p><br/>
               {breadcrumbs}
             </div>
@@ -43,9 +42,14 @@ class TutorialNavigator extends React.Component {
   
 }
 
+TutorialNavigator.defaultProps = {
+  firstQuestion: "Choose your application type"
+};
+
 TutorialNavigator.propTypes = {
   quickstarts: React.PropTypes.object,
-  quickstart: React.PropTypes.object
+  quickstart: React.PropTypes.object,
+  firstQuestion: React.PropTypes.string,
 }
 
 TutorialNavigator = connectToStores(TutorialNavigator, [TutorialStore], (context, props) => {
