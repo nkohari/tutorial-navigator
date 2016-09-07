@@ -5,10 +5,11 @@ import loadArticleAction from '../action/load-article-action';
 class Platform extends React.Component {
   
   handleClick() {
-    let {quickstart, platform, customNavigationAction} = this.props;
+    let {quickstart, platform, singleArticleMode, customNavigationAction} = this.props;
     let payload = {
       quickstartId: quickstart.name,
-      platformId: platform.name
+      platformId: platform.name,
+      singleArticleMode
     };
     if (customNavigationAction) {
       this.context.executeAction(customNavigationAction, payload);
@@ -49,6 +50,7 @@ class Platform extends React.Component {
 Platform.propTypes = {
   quickstart: React.PropTypes.object,
   platform: React.PropTypes.object,
+  singleArticleMode: React.PropTypes.bool,
   customNavigationAction: React.PropTypes.func
 }
 

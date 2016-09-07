@@ -9,7 +9,7 @@ class TutorialNavigator extends React.Component {
   
   render() {
     
-    let {quickstarts, quickstart, firstQuestion} = this.props;
+    let {quickstart, firstQuestion} = this.props;
 
     let picker = undefined;
     let question = undefined;
@@ -21,7 +21,7 @@ class TutorialNavigator extends React.Component {
       breadcrumbs = <Breadcrumbs {...this.props} />;
     }
     else {
-      picker = <QuickstartList quickstarts={quickstarts} {...this.props} />;
+      picker = <QuickstartList {...this.props} />;
       question = firstQuestion;
     }
     
@@ -50,6 +50,7 @@ TutorialNavigator.propTypes = {
   quickstarts: React.PropTypes.object,
   quickstart: React.PropTypes.object,
   firstQuestion: React.PropTypes.string,
+  singleArticleMode: React.PropTypes.bool
 }
 
 TutorialNavigator = connectToStores(TutorialNavigator, [TutorialStore], (context, props) => {

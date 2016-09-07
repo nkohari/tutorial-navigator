@@ -22,12 +22,17 @@ NavigatorAndTutorialView.propTypes = {
   platform: React.PropTypes.object,
   article: React.PropTypes.object,
   restrict: React.PropTypes.string,
+  singleArticleMode: React.PropTypes.bool,
   componentLoadedInBrowser: React.PropTypes.func
 }
 
 NavigatorAndTutorialView.contextTypes = {
   getStore: React.PropTypes.func,
   executeAction: React.PropTypes.func
+};
+
+NavigatorAndTutorialView.deafultProps = {
+  singleArticleMode: false
 };
 
 NavigatorAndTutorialView = provideContext(connectToStores(NavigatorAndTutorialView, [TutorialStore], (context, props) => {

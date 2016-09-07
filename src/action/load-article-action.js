@@ -5,10 +5,17 @@ export default function loadArticleAction(context, payload, done) {
 
   let articleService = context.getService(ServiceKeys.ArticleService);
   let quickstarts = context.getStore(TutorialStore).getQuickstarts();
-  let {quickstartId, platformId, articleId, clientId} = payload;
+  let {quickstartId, platformId, articleId, clientId, singleArticleMode} = payload;
 
   if (quickstartId && platformId && !articleId) {
-    articleId = quickstarts[quickstartId].platforms[platformId].articles[0].name;
+    let platform = quickstarts[quickstartId].platforms[platformId];
+    if (singleArticleMode) {
+      let article = _.find(platform.articles, (a) => a.default);
+      if (article) articleId = article.name;
+    }
+    if (!articleId) {
+      articleId = platform.articles[0].name;
+    }
   }
 
   return articleService.loadArticle(quickstarts, {quickstartId, platformId, articleId, clientId})
