@@ -10,8 +10,7 @@ export default function loadArticleAction(context, payload, done) {
   if (quickstartId && platformId && !articleId) {
     let platform = quickstarts[quickstartId].platforms[platformId];
     if (singleArticleMode) {
-      let article = _.find(platform.articles, (a) => a.default);
-      if (article) articleId = article.name;
+      articleId = platform.defaultArticle;
     }
     if (!articleId) {
       articleId = platform.articles[0].name;
