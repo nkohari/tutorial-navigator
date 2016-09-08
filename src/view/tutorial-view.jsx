@@ -12,9 +12,9 @@ import { connectToStores, provideContext } from 'fluxible-addons-react';
 class TutorialView extends React.Component {
 
   renderTitle() {
-    let {platform, article, singleArticleMode} = this.props;
+    let {platform, article, isSingleArticleMode} = this.props;
     if (platform && article) {
-      if (singleArticleMode || platform.articles.length === 1 || article.number === 0) {
+      if (isSingleArticleMode || platform.articles.length === 1 || article.number === 0) {
         return platform.title + " SDK Tutorial";
       } else {
         return platform.title + " " + article.title;
@@ -24,12 +24,12 @@ class TutorialView extends React.Component {
 
   render() {
 
-    let {quickstart, platform, article, singleArticleMode} = this.props;
+    let {quickstart, platform, article, isSingleArticleMode} = this.props;
     let sidebar = null;
     let tutorial = null;
     let columnWidth = 12;
 
-    if (!singleArticleMode && platform && platform.articles.length > 1) {
+    if (!isSingleArticleMode && platform && platform.articles.length > 1) {
       columnWidth = 9
       sidebar = <div className="col-sm-3">
         <TutorialTableOfContents quickstart={quickstart} platform={platform} currentArticle={article} />
@@ -67,6 +67,7 @@ TutorialView.propTypes = {
   quickstart: React.PropTypes.object,
   platform: React.PropTypes.object,
   article: React.PropTypes.object,
+  isSingleArticleMode: React.PropTypes.bool,
   componentLoadedInBrowser: React.PropTypes.func
 }
 

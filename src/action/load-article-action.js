@@ -4,16 +4,19 @@ import ServiceKeys from '../services/keys';
 export default function loadArticleAction(context, payload, done) {
 
   let articleService = context.getService(ServiceKeys.ArticleService);
-  let quickstarts = context.getStore(TutorialStore).getQuickstarts();
-  let {quickstartId, platformId, articleId, clientId, singleArticleMode} = payload;
+
+  let store = context.getStore(TutorialStore);
+  let quickstarts = store.getQuickstarts();
+  let isSingleArticleMode = store.getSingleArticleMode();
+
+  let {quickstartId, platformId, articleId, clientId} = payload;
 
   if (quickstartId && platformId && !articleId) {
     let platform = quickstarts[quickstartId].platforms[platformId];
-    if (singleArticleMode) {
-      let article = _.find(platform.articles, (a) => a.default);
-      if (article) articleId = article.name;
+    if (isSingleArticleMode && platform.defaultArticle) {
+      articleId = platform.defaultArticle;
     }
-    if (!articleId) {
+    else {
       articleId = platform.articles[0].name;
     }
   }

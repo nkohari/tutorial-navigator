@@ -4,7 +4,7 @@ import Platform from './platform';
 class PlatformList extends React.Component {
   
   render() {
-    let {quickstart, singleArticleMode, customNavigationAction} = this.props;
+    let {quickstart, customNavigationAction} = this.props;
     
     let items = Object.keys(quickstart.platforms).map((name, i) => (
       <Platform
@@ -12,7 +12,6 @@ class PlatformList extends React.Component {
         delay={20 * i}
         quickstart={quickstart}
         platform={quickstart.platforms[name]}
-        singleArticleMode={singleArticleMode}
         customNavigationAction={customNavigationAction} />
     ));
 
