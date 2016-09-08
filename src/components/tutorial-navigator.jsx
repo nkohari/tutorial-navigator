@@ -49,8 +49,7 @@ TutorialNavigator.defaultProps = {
 TutorialNavigator.propTypes = {
   quickstarts: React.PropTypes.object,
   quickstart: React.PropTypes.object,
-  firstQuestion: React.PropTypes.string,
-  singleArticleMode: React.PropTypes.bool
+  firstQuestion: React.PropTypes.string
 }
 
 TutorialNavigator = connectToStores(TutorialNavigator, [TutorialStore], (context, props) => {

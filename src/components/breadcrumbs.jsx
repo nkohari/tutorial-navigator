@@ -17,7 +17,7 @@ class Breadcrumbs extends React.Component {
 
   render() {
     let crumbs = [];
-    let {quickstart, platform, article, isRestricted} = this.props;
+    let {quickstart, platform, article, isRestricted, isSingleArticleMode} = this.props;
     let index = 1;
 
     if (!quickstart) {
@@ -71,7 +71,7 @@ class Breadcrumbs extends React.Component {
         </div>
       );
       index++;
-      if (article && platform.articles.length > 1) {
+      if (article && platform.articles.length > 1 && !isSingleArticleMode) {
         crumbs.push(<i className="icon-budicon-461" key={index + 'sep'}></i>);
         crumbs.push(
           <div itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem" key={index}>
@@ -109,7 +109,8 @@ Breadcrumbs = connectToStores(Breadcrumbs, [TutorialStore], (context, props) => 
     quickstart: store.getCurrentQuickstart(),
     platform: store.getCurrentPlatform(),
     article: store.getCurrentArticle(),
-    isRestricted: store.getRestricted()
+    isRestricted: store.getRestricted(),
+    isSingleArticleMode: store.getSingleArticleMode()
   };
 });
 

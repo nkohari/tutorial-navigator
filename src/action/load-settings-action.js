@@ -3,6 +3,7 @@ export default function loadSettingsAction(context, payload) {
     quickstarts: payload.quickstarts,
     navigation: payload.navigation,
     selectedTutorial: payload.selectedTutorial,
-    restricted: payload.restricted
+    restricted: payload.restricted,
+    singleArticleMode: payload.singleArticleMode
   });
 };

@@ -175,9 +175,12 @@ ExampleArticleService.loadArticle = function(quickstarts, payload) {
   
 };
 
-// Access the example at http://localhost:8990/?single to activate single-article mode.
-var singleArticleMode = document.location.search.indexOf('single') != -1;
-
 var context = TutorialNavigator.createCustomContext(ExampleArticleService);
-TutorialNavigator.loadSettingsAction(context, {quickstarts: EXAMPLE_QUICKSTART_DATA}, function(){})
-TutorialNavigator.renderElement(document.getElementById('app'), {context, singleArticleMode});
+
+// Access the example at http://localhost:8990/?single to activate single-article mode.
+TutorialNavigator.loadSettingsAction(context, {
+  quickstarts: EXAMPLE_QUICKSTART_DATA,
+  singleArticleMode: document.location.search.indexOf('single') != -1
+}, function(){})
+
+TutorialNavigator.renderElement(document.getElementById('app'), {context});

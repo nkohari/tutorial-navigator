@@ -21,8 +21,6 @@ NavigatorAndTutorialView.propTypes = {
   quickstart: React.PropTypes.object,
   platform: React.PropTypes.object,
   article: React.PropTypes.object,
-  restrict: React.PropTypes.string,
-  singleArticleMode: React.PropTypes.bool,
   componentLoadedInBrowser: React.PropTypes.func
 }
 
@@ -31,16 +29,13 @@ NavigatorAndTutorialView.contextTypes = {
   executeAction: React.PropTypes.func
 };
 
-NavigatorAndTutorialView.deafultProps = {
-  singleArticleMode: false
-};
-
 NavigatorAndTutorialView = provideContext(connectToStores(NavigatorAndTutorialView, [TutorialStore], (context, props) => {
   let tutorialStore = context.getStore(TutorialStore);
   return {
     quickstart: tutorialStore.getCurrentQuickstart(),
     platform: tutorialStore.getCurrentPlatform(),
-    article: tutorialStore.getCurrentArticle()
+    article: tutorialStore.getCurrentArticle(),
+    isSingleArticleMode: tutorialStore.getSingleArticleMode()
   };
 }));
 

@@ -10,6 +10,7 @@ class TutorialStore extends BaseStore {
     this.currentPlatformId = undefined;
     this.currentArticleId = undefined;
     this.restricted = false;
+    this.singleArticleMode = false;
   }
   
   getQuickstarts() {
@@ -19,7 +20,11 @@ class TutorialStore extends BaseStore {
   getRestricted() {
     return this.restricted;
   }
-  
+
+  getSingleArticleMode() {
+    return this.singleArticleMode;
+  }
+
   getCurrentQuickstart() {
     if (this.currentQuickstartId) {
       return this.quickstarts[this.currentQuickstartId];
@@ -45,6 +50,9 @@ class TutorialStore extends BaseStore {
       if (this.currentArticleId) {
         return _.find(platform.articles, {name: this.currentArticleId});
       }
+      else if (this.singleArticleMode && platform.defaultArticle) {
+        return _.find(platform.articles, {name: platform.defaultArticle});
+      }
       else {
         return _.first(platform.articles);
       }
@@ -67,6 +75,7 @@ class TutorialStore extends BaseStore {
   handleSettingsLoaded(payload) {
     this.quickstarts = payload.quickstarts;
     this.restricted = payload.restricted;
+    this.singleArticleMode = payload.singleArticleMode;
     if (payload.selectedTutorial) {
       this.currentQuickstartId = payload.selectedTutorial.quickstartId;
       this.currentPlatformId = payload.selectedTutorial.platformId;
@@ -81,7 +90,8 @@ class TutorialStore extends BaseStore {
       currentQuickstartId: this.currentQuickstartId,
       currentPlatformId: this.currentPlatformId,
       currentArticleId: this.currentArticleId,
-      restricted: this.restricted
+      restricted: this.restricted,
+      singleArticleMode: this.singleArticleMode
     }
   }
   
@@ -91,6 +101,7 @@ class TutorialStore extends BaseStore {
     this.currentPlatformId = state.currentPlatformId;
     this.currentArticleId = state.currentArticleId;
     this.restricted = state.restricted;
+    this.singleArticleMode = state.singleArticleMode;
   }
   
 }
