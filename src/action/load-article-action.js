@@ -14,7 +14,7 @@ export default function loadArticleAction(context, payload, done) {
   if (quickstartId && platformId && !articleId) {
     let platform = quickstarts[quickstartId].platforms[platformId];
     if (isSingleArticleMode && platform.defaultArticle) {
-      articleId = platform.defaultArticle;
+      articleId = platform.defaultArticle.name;
     }
     else {
       articleId = platform.articles[0].name;

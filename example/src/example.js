@@ -12,6 +12,11 @@ var EXAMPLE_QUICKSTART_DATA = {
         "name": "native-multi-example",
         "title": "Native Multi-Step Platform",
         "image": "/media/platforms/react.png",
+        "defaultArticle": {
+          "name": "native-multi-example-summary",
+          "title": "Summary",
+          "url": "//articles/x-native-platforms/native-multi-example/summary"
+        },
         "articles": [
           {
             "name": "login",
