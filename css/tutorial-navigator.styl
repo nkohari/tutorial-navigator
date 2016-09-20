@@ -17,7 +17,7 @@
   min-height: 525px;
   background: #F3F3F3;
   position: relative;
-  color: color_oil;
+  color: $color-oil;
 
   .container
     min-width: auto;
@@ -25,7 +25,7 @@
 
   .banner
     background: none;
-    color: color_oil;
+    color: $color-oil;
     margin: 0;
     transition: min-height 100ms ease;
     color: #333;
@@ -50,7 +50,7 @@
 
       span
         font-size: 14px;
-        color: color_oil;
+        color: $color-oil;
         display: block;
 
         +breakpoint("desktop")
@@ -77,7 +77,7 @@
     margin: 20px 0;
     margin-bottom: 10px;
     display: inline-block;
-    color: color_oil;
+    color: $color-oil;
     font-size: 20px;
 
   .tenant-switcher
@@ -178,7 +178,7 @@
       transition: opacity 100ms ease;
 
     .description.description
-      color: color_oil;
+      color: $color-oil;
       line-height: normal;
       font-size: 1rem;
       margin-bottom: 10px;
@@ -205,7 +205,7 @@
 
     .symbol
       display: inline-block;
-      background: color_green;
+      background: $color-green;
       border-radius: 50%;
       height: 100px;
       width: 100px;
@@ -234,7 +234,7 @@
   .quickstart:hover
     +breakpoint("desktop")
       background: white;
-      color: color_oil;
+      color: $color-oil;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 
       .symbol
@@ -268,7 +268,7 @@
     opacity: 0.5;
 
   a
-    color: color_oil;
+    color: $color-oil;
     font-weight: normal
     display: inline-block
     cursor: pointer
@@ -277,7 +277,7 @@
     padding: 0 5px;
 
   .text
-    color: color_oil;
+    color: $color-oil;
     border-radius: 20px;
 
     &:hover
@@ -291,23 +291,55 @@
     padding 0
   .tutorial-toc-title
     font-size 24px
-    color color_text_light
+    color $color-text-light
   .tutorial-toc-description
     font-size 12px
     line-height 18px
-    color color_text_light
+    color $color-text-light
     margin 10px 0 20px
   .tutorial-toc-article
     cursor pointer
     list-style none
     margin-bottom 14px
     font-size 14px
-    color color_text_light
+    color $color-text-light
     &:hover
-      color color_text_gray
+      color $color-text
     &.selected
-      color color_text_gray
+      color $color-text
       font-weight 700
+
+.tutorial-next-steps
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2)
+  padding: 40px 40px 26px 40px
+  margin: 20px 0
+  h2
+    font-size: 24px
+    margin: 0px
+  p
+    margin: 4px 0 28px 0
+    color: $color-text-light
+  .tutorial-next-steps-articles
+    margin: 0
+    padding: 0
+    max-width: 600px
+    li
+      list-style-type: none
+      display: inline-block
+      width: 50%
+      font-weight: 500
+      margin-bottom: 14px
+      a
+        &:link, &:visited
+          color: $color-text
+        &:hover, &:active
+          color: #0a84ae
+      i
+        padding-right: 6px
+
+@media screen and (max-width: 480px)
+  .tutorial-next-steps .tutorial-next-steps-articles li
+    width: 100%
 
 .tutorial-prevnext
   padding: 30px 0 60px
@@ -344,7 +376,7 @@
   .center .quickstart
     cursor: pointer;
     background: white;
-    color: color_oil;
+    color: $color-oil;
     pointer-events: auto;
     opacity: 1;
 

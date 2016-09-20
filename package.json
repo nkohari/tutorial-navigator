@@ -1,11 +1,11 @@
 {
   "name": "auth0-tutorial-navigator",
-  "version": "3.6.1",
+  "version": "3.7.0",
   "private": true,
   "main": "index.js",
   "description": "Auth0's quickstarts",
   "dependencies": {
-    "auth0-styleguide": "auth0/styleguide#2.2.7",
+    "auth0-styleguide": "auth0/styleguide#4.8.6",
     "flux": ">=2.1.1",
     "fluxible-addons-react": "^0.2.8",
     "fluxible-plugin-service-proxy": "^1.1.0",

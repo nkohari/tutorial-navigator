@@ -47,11 +47,11 @@ class TutorialStore extends BaseStore {
   getCurrentArticle() {
     let platform = this.getCurrentPlatform();
     if (platform) {
-      if (this.currentArticleId) {
-        return _.find(platform.articles, {name: this.currentArticleId});
+      if (this.singleArticleMode && platform.defaultArticle) {
+        return platform.defaultArticle;
       }
-      else if (this.singleArticleMode && platform.defaultArticle) {
-        return _.find(platform.articles, {name: platform.defaultArticle});
+      else if (this.currentArticleId) {
+        return _.find(platform.articles, {name: this.currentArticleId});
       }
       else {
         return _.first(platform.articles);
