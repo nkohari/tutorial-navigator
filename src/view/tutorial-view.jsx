@@ -4,6 +4,7 @@ import ArticleStore from '../stores/article-store';
 import Breadcrumbs from '../components/breadcrumbs';
 import Tutorial from '../components/tutorial';
 import TutorialTableOfContents from '../components/tutorial-table-of-contents';
+import TutorialNextSteps from '../components/tutorial-next-steps';
 import { connectToStores, provideContext } from 'fluxible-addons-react';
 
 // TODO: There's a lot of duplication here vs. the TutorialPage component in auth0-docs.
@@ -27,6 +28,7 @@ class TutorialView extends React.Component {
     let {quickstart, platform, article, isSingleArticleMode} = this.props;
     let sidebar = null;
     let tutorial = null;
+    let nextSteps = null;
     let columnWidth = 12;
 
     if (!isSingleArticleMode && platform && platform.articles.length > 1) {
@@ -34,6 +36,10 @@ class TutorialView extends React.Component {
       sidebar = <div className="col-sm-3">
         <TutorialTableOfContents quickstart={quickstart} platform={platform} currentArticle={article} />
       </div>;
+    }
+
+    if (isSingleArticleMode) {
+      nextSteps = <TutorialNextSteps quickstart={quickstart} platform={platform} />;
     }
 
     return (
@@ -48,6 +54,7 @@ class TutorialView extends React.Component {
               <section className="docs-content">
                 <h1 className="tutorial-title">{this.renderTitle()}</h1>
                 <Tutorial {...this.props} />
+                {nextSteps}
               </section>
               <div id="try-banner">
                 <div className="try-banner try-banner-alt">

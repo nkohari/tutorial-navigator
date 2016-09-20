@@ -4,6 +4,7 @@ import navigateAction from './action/navigate-action';
 import Breadcrumbs from './components/breadcrumbs';
 import Tutorial from './components/tutorial';
 import TutorialNavigator from './components/tutorial-navigator';
+import TutorialNextSteps from './components/tutorial-next-steps';
 import TutorialTableOfContents from './components/tutorial-table-of-contents';
 import TutorialPrevNext from './components/tutorial-prev-next';
 import ArticleService from './services/article-service';
@@ -21,6 +22,7 @@ module.exports = {
   NavigatorAndTutorialView,
   Tutorial,
   TutorialNavigator,
+  TutorialNextSteps,
   TutorialTableOfContents,
   TutorialPrevNext,
 
