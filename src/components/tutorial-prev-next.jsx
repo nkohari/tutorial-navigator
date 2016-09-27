@@ -4,7 +4,7 @@ import loadArticleAction from '../action/load-article-action';
 import navigateAction from '../action/navigate-action';
 
 class TutorialPrevNext extends React.Component {
-  
+
   handleClick(article) {
     let {quickstart, platform, customNavigationAction} = this.props;
     let payload = {
@@ -32,26 +32,36 @@ class TutorialPrevNext extends React.Component {
       let currentIndex = currentArticle.number - 1;
       if (currentIndex > 0) {
         let prevArticle = platform.articles[currentIndex - 1];
-        prev = <a className="tutorial-prevnext-prev" onClick={this.handleClick.bind(this, prevArticle)}>
-          <i className="icon-budicon-463" />{prevArticle.title}
-        </a>;
+        prev = (
+          <div className="tutorial-prev-next-prev">
+            <div className="tutorial-prev-next-header">Previous Tutorial</div>
+            <a onClick={this.handleClick.bind(this, prevArticle)}>
+              <i className="icon-budicon-463" /> {prevArticle.number}. {prevArticle.title}
+            </a>
+          </div>
+        );
       }
       if (platform.articles.length > 1 && currentIndex < platform.articles.length - 1) {
         let nextArticle = platform.articles[currentIndex + 1];
-        next = <a className="tutorial-prevnext-next" onClick={this.handleClick.bind(this, nextArticle)}>
-          {nextArticle.title} <i className="icon-budicon-461" />
-        </a>;
+        next = (
+          <div className="tutorial-prev-next-next">
+            <div className="tutorial-prev-next-header">Next Tutorial</div>
+            <a onClick={this.handleClick.bind(this, nextArticle)}>
+              {nextArticle.number}. {nextArticle.title} <i className="icon-budicon-461" />
+            </a>
+          </div>
+        );
       }
     }
-    
+
     return (
-      <div className="tutorial-prevnext">
+      <div className="tutorial-prev-next">
         {prev}
         {next}
       </div>
     );
   }
-  
+
 }
 
 TutorialPrevNext.propTypes = {
