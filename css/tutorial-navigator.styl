@@ -256,7 +256,7 @@
 
   > div
     display: inline-block;
-    
+
   i
     font-size: 12px;
     animation: none;
@@ -341,22 +341,34 @@
   .tutorial-next-steps .tutorial-next-steps-articles li
     width: 100%
 
-.tutorial-prevnext
-  padding: 30px 0 60px
+.tutorial-prev-next
+  overflow: hidden
+  margin: 60px 0
+  padding-top: 20px
+  font-size: 16px
+  border-top: 1px solid $color-gray
+
+  .tutorial-prev-next-header
+    font-size: 12px
+    font-weight: 500
+    line-height: 15px
+    color: $color-text-lighter
+    text-transform: uppercase
+
   a
-    display: block
     cursor: pointer
-    i
-      position: relative
-      top: 2px
-    &.tutorial-prevnext-prev
-      float: left
-      i
-        padding-right: 6px
-    &.tutorial-prevnext-next
-      float: right
-      i
-        padding-left: 6px
+
+  i
+    position: relative
+    top: 2px
+
+  .tutorial-prev-next-prev
+    float: left
+    text-align: left
+
+  .tutorial-prev-next-next
+    float: right
+    text-align: right
 
 @media screen and (max-width: 992px)
   .quickstart
