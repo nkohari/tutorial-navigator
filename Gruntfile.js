@@ -13,6 +13,10 @@ module.exports = function (grunt) {
   var minor_version = pkg.version.replace(/\.(\d)*$/, '');
   var major_version = pkg.version.replace(/\.(\d)*\.(\d)*$/, '');
 
+  var styleFiles = [
+    'css/tutorial-navigator.styl'
+  ];
+
   function  rename_release (v) {
     return function (d, f) {
       var dest = path.join(d, f.replace(/(\.min)?\.(js|css)$/, '-'+ v + '$1.$2'));
@@ -107,7 +111,7 @@ module.exports = function (grunt) {
           options: {
             compress: false
           },
-          src: ['css/tutorial-navigator.styl', 'css/carousel.styl'],
+          src: styleFiles,
           dest: 'build/tutorial-navigator.css'
         }
     },
@@ -124,7 +128,7 @@ module.exports = function (grunt) {
     },
     watch: {
       stylus: {
-        files: ['css/tutorial-navigator.styl', 'css/carousel.styl'],
+        files: styleFiles,
         tasks: ['stylus:build']
       }
     },

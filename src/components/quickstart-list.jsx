@@ -2,13 +2,13 @@ import React from 'react';
 import Quickstart from './quickstart';
 
 class QuickstartList extends React.Component {
-  
+
   componentDidMount() {
     if (this.props.componentLoadedInBrowser && typeof window !== 'undefined') {
       this.props.componentLoadedInBrowser.call(this);
     }
   }
-  
+
   render() {
     let {quickstarts, customNavigationAction} = this.props;
     let items = null;
@@ -24,11 +24,11 @@ class QuickstartList extends React.Component {
     }
     return (
       <div className={hide + "quickstart-list container"}>
-        <div className="js-carousel" ref="carousel">{items}</div>
+        <div ref="carousel">{items}</div>
       </div>
     );
   }
-  
+
 }
 
 QuickstartList.propTypes = {
