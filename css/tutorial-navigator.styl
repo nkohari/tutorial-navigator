@@ -2,8 +2,13 @@
 @import '../node_modules/auth0-styleguide/lib/mixins'
 
 // UI elements
+@import './carousel'
 @import './quickstarts'
 @import './breadcrumbs'
+
+#tutorial-template
+  .loading-tutorial
+    padding-top: 150px;
 
 #tutorial-navigator
   min-height: 525px;
@@ -65,11 +70,11 @@
 
   .question-text,
   .tenant-switcher
-    margin: 20px 0;
-    margin-bottom: 10px;
-    display: inline-block;
-    color: $color-oil;
-    font-size: 20px;
+    margin 20px 0
+    margin-bottom 10px
+    display inline-block
+    color rgba(0, 0, 0, 0.58) !important
+    font-size 20px
 
   .tenant-switcher
     max-width: 320px;

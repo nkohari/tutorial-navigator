@@ -24,7 +24,7 @@ class QuickstartList extends React.Component {
     }
     return (
       <div className={hide + "quickstart-list container"}>
-        <div ref="carousel">{items}</div>
+        <div className="js-carousel" ref="carousel">{items}</div>
       </div>
     );
   }

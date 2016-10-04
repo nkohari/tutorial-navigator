@@ -1,4 +1,5 @@
 .quickstart-list
+
   &.container
     padding: 0;
     padding-top: 30px;
@@ -14,19 +15,55 @@
 #tutorial-navigator
 
   .quickstart
-    cursor: pointer;
-    max-width: 200px;
-    display: inline-block;
-    margin-right: 20px;
-    padding: 15px 10px;
-    border-radius: 3px;
-    transition: background 100ms ease;
-    margin-bottom: 5px;
-    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    animation-duration: 200ms;
+    white-space normal
+    vertical-align top
+    cursor pointer
+    padding 15px 10px
+    border-radius 3px
+    transition background 100ms ease
+    margin-bottom 5px
+    animation-timing-function cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    animation-duration 200ms
 
-    &:last-child
-      margin-right 0
+    +breakpoint("tablet", "max")
+      opacity: 0.3;
+      background: #A9B3BC;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+      pointer-events: none;
+
+      .symbol
+        opacity: 0.5;
+
+      .cta
+        opacity: 1;
+        pointer-events: none;
+
+    .symbol
+      display inline-block;
+      border-radius 50%;
+      height 100px;
+      width 100px;
+      margin-bottom 20px;
+      background-color white
+      position relative
+
+      &:after
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-size: 50% 50%;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+      i
+        font-size: 40px;
+        top: 30%;
+        animation: none;
+        color: #363C42;
 
     .btn
       letter-spacing: 0.005em;
@@ -71,60 +108,30 @@
         &:after
           background-image: url('https://auth0.com/docs/img/quickstarts/backend.svg');
 
-    .symbol
-      display: inline-block;
-      background: $color-green;
-      border-radius: 50%;
-      height: 100px;
-      width: 100px;
-      margin-bottom: 20px;
-      background: white;
-      position: relative;
 
-      &:after
-        position: absolute;
-        top: 0;
-        left: 0;
-        content: "";
-        display: block;
-        height: 100%;
-        width: 100%;
-        background-size: 50% 50%;
-        background-repeat: no-repeat;
-        background-position: center center;
-
-      i
-        font-size: 40px;
-        top: 30%;
-        animation: none;
-        color: #363C42;
-
-  .quickstart:hover
-    +breakpoint("desktop")
-      background: white;
-      color: $color-oil;
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    +breakpoint("tablet", "max")
+      i,
+      .symbol
+        opacity: 1;
 
       .symbol
-        background: #F3F3F3;
+        background-color #F3F3F3
 
       .cta
         opacity: 1;
+        pointer-events: auto;
 
-@media screen and (max-width: 992px)
-  .quickstart
-    cursor: default;
-    opacity: 0.3;
-    background: #A9B3BC;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-    pointer-events: none;
+    &:hover
+      +breakpoint("tablet")
+        background-color white
+        color $color-oil
+        box-shadow 0 2px 4px 0 rgba(0, 0, 0, 0.1)
 
-    .symbol
-      opacity: 0.5;
+        .symbol
+          background-color #F3F3F3
 
-    .cta
-      opacity: 1;
-      pointer-events: none;
+        .cta
+          opacity: 1;
 
   .center .quickstart
     cursor: pointer;
