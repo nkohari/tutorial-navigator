@@ -2,13 +2,13 @@ import React from 'react';
 import Quickstart from './quickstart';
 
 class QuickstartList extends React.Component {
-  
+
   componentDidMount() {
     if (this.props.componentLoadedInBrowser && typeof window !== 'undefined') {
       this.props.componentLoadedInBrowser.call(this);
     }
   }
-  
+
   render() {
     let {quickstarts, customNavigationAction} = this.props;
     let items = null;
@@ -28,7 +28,7 @@ class QuickstartList extends React.Component {
       </div>
     );
   }
-  
+
 }
 
 QuickstartList.propTypes = {

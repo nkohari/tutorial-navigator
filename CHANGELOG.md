@@ -1,3 +1,14 @@
+## [3.8.0] - 2016-09-27
+
+### Fixed
+
+- [] Style fixes. (`Ariel Gerstein`)
+  https://github.com/auth0/tutorial-navigator/commit/676c119ff008e959c63a7f56288cd04977acde82
+- [] Add carousel and quick starts styles. (`Ariel Gerstein`)
+  https://github.com/auth0/tutorial-navigator/commit/f17d9dea0158c6d1f952fa921f2d62adf3559dc0
+- [] Add separate breadcrumbs and quickstarts files. Comment carousel specific styles. (`Ariel Gerstein`)
+  https://github.com/auth0/tutorial-navigator/commit/8ac5fca1c3c1620745656cc2449951d8f7369a8c
+
 ## [3.4.1] - 2016-06-20
 
 ### Fixed
