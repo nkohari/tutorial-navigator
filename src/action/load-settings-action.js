@@ -4,6 +4,7 @@ export default function loadSettingsAction(context, payload) {
     navigation: payload.navigation,
     selectedTutorial: payload.selectedTutorial,
     restricted: payload.restricted,
-    singleArticleMode: payload.singleArticleMode
+    singleArticleMode: payload.singleArticleMode,
+    baseUrl: payload.baseUrl
   });
 };

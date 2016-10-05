@@ -99,10 +99,13 @@ module.exports = function (grunt) {
     connect: {
       dev: {
         options: {
+          protocol: 'https',
           keepalive: true,
           hostname: '*',
           port: 8990,
-          base: ['.', 'example', 'vendor/react']
+          base: ['.', 'example', 'vendor/react'],
+          cert: grunt.file.read('certs/cert.pem').toString(),
+          key: grunt.file.read('certs/key.pem').toString()
         }
       },
     },
