@@ -156,17 +156,17 @@ var EXAMPLE_QUICKSTART_DATA = {
 let ExampleArticleService = {};
 
 ExampleArticleService.loadArticle = function(quickstarts, payload) {
-  
+
   let {quickstartId, platformId, articleId, clientId} = payload;
 
   let tokens = ['http://localhost:5050/docs'];
   if (quickstartId) tokens.push(quickstarts[quickstartId].slug);
   if (platformId)   tokens.push(platformId);
   if (articleId)    tokens.push(articleId);
-  
+
   let url = tokens.join('/') + "?e=1";
   if (clientId) url += `&a=${clientId}`;
-  
+
   return new Promise(function(resolve, reject) {
     $.ajax({
       url: url,
@@ -177,7 +177,7 @@ ExampleArticleService.loadArticle = function(quickstarts, payload) {
       }
     });
   });
-  
+
 };
 
 var context = TutorialNavigator.createCustomContext(ExampleArticleService);
@@ -185,7 +185,8 @@ var context = TutorialNavigator.createCustomContext(ExampleArticleService);
 // Access the example at http://localhost:8990/?single to activate single-article mode.
 TutorialNavigator.loadSettingsAction(context, {
   quickstarts: EXAMPLE_QUICKSTART_DATA,
-  singleArticleMode: document.location.search.indexOf('single') != -1
+  singleArticleMode: document.location.search.indexOf('single') != -1,
+  baseUrl: "https://auth0.com/docs"
 }, function(){})
 
 TutorialNavigator.renderElement(document.getElementById('app'), {context});

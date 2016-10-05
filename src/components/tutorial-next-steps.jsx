@@ -1,18 +1,19 @@
 import React from 'react';
 import _ from 'lodash';
+import TutorialStore from '../stores/tutorial-store';
+import { connectToStores } from 'fluxible-addons-react';
 
-const BASE_URL = "https://auth0.com/docs/quickstart";
 const DEFAULT_ARTICLE_BUDICON = 691;
 
 class TutorialNextSteps extends React.Component {
 
   render() {
 
-    let {quickstart, platform} = this.props;
+    let {quickstart, platform, baseUrl} = this.props;
 
     let items = platform.articles.map((article, index) => {
       let icon = article.budicon ? article.budicon : DEFAULT_ARTICLE_BUDICON;
-      let href = [BASE_URL, quickstart.name, platform.name, article.name].join('/');
+      let href = [baseUrl, 'quickstart', quickstart.name, platform.name, article.name].join('/');
       return (
         <li key={index} className="tutorial-next-steps-article">
           <a href={href} target="_blank">
@@ -41,5 +42,11 @@ TutorialNextSteps.propTypes = {
   quickstart: React.PropTypes.object,
   platform: React.PropTypes.object
 }
+
+TutorialNextSteps = connectToStores(TutorialNextSteps, [TutorialStore], (context, props) => {
+  return {
+    baseUrl: context.getStore(TutorialStore).getBaseUrl()
+  };
+});
 
 export default TutorialNextSteps;

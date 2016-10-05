@@ -2,7 +2,7 @@ import {BaseStore} from 'fluxible/addons';
 import _ from 'lodash';
 
 class TutorialStore extends BaseStore {
-  
+
   constructor(dispatcher) {
     super(dispatcher);
     this.quickstarts = undefined;
@@ -11,18 +11,23 @@ class TutorialStore extends BaseStore {
     this.currentArticleId = undefined;
     this.restricted = false;
     this.singleArticleMode = false;
+    this.baseUrl = undefined;
   }
-  
+
   getQuickstarts() {
     return this.quickstarts;
   }
-  
+
   getRestricted() {
     return this.restricted;
   }
 
   getSingleArticleMode() {
     return this.singleArticleMode;
+  }
+
+  getBaseUrl() {
+    return this.baseUrl;
   }
 
   getCurrentQuickstart() {
@@ -33,7 +38,7 @@ class TutorialStore extends BaseStore {
       return undefined;
     }
   }
-  
+
   getCurrentPlatform() {
     let quickstart = this.getCurrentQuickstart();
     if (quickstart && this.currentPlatformId) {
@@ -43,7 +48,7 @@ class TutorialStore extends BaseStore {
       return undefined;
     }
   }
-  
+
   getCurrentArticle() {
     let platform = this.getCurrentPlatform();
     if (platform) {
@@ -58,7 +63,7 @@ class TutorialStore extends BaseStore {
       }
     }
   }
-  
+
   handleTutorialNavigatorLoaded(payload) {
     this.currentQuickstartId = payload.quickstartId;
     this.currentPlatformId = payload.platformId;
@@ -71,11 +76,12 @@ class TutorialStore extends BaseStore {
     this.currentArticleId = payload.articleId;
     this.emitChange();
   }
-  
+
   handleSettingsLoaded(payload) {
     this.quickstarts = payload.quickstarts;
     this.restricted = payload.restricted;
     this.singleArticleMode = payload.singleArticleMode;
+    this.baseUrl = payload.baseUrl;
     if (payload.selectedTutorial) {
       this.currentQuickstartId = payload.selectedTutorial.quickstartId;
       this.currentPlatformId = payload.selectedTutorial.platformId;
@@ -83,7 +89,7 @@ class TutorialStore extends BaseStore {
     }
     this.emitChange();
   }
-  
+
   dehydrate() {
     return {
       quickstarts: this.quickstarts,
@@ -94,7 +100,7 @@ class TutorialStore extends BaseStore {
       singleArticleMode: this.singleArticleMode
     }
   }
-  
+
   rehydrate(state) {
     this.quickstarts = state.quickstarts;
     this.currentQuickstartId = state.currentQuickstartId;
@@ -103,7 +109,7 @@ class TutorialStore extends BaseStore {
     this.restricted = state.restricted;
     this.singleArticleMode = state.singleArticleMode;
   }
-  
+
 }
 
 TutorialStore.storeName = 'TutorialStore';
