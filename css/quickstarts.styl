@@ -5,7 +5,7 @@
     padding-top: 30px;
     margin: 0 auto;
 
-  +breakpoint("desktop")
+  +breakpoint("tablet")
     min-height: 302px;
 
   .item
@@ -13,6 +13,43 @@
 
 
 #tutorial-navigator
+
+  // Carousel loaded quickstart styles
+  .js-carousel.owl-loaded
+
+    .center .quickstart
+      +breakpoint("tablet", "max")
+        cursor: pointer;
+        background: white;
+        color: $color-oil;
+        pointer-events: auto;
+        opacity: 1;
+
+        .cta
+          opacity: 1;
+          pointer-events: auto;
+
+        i,
+        .symbol
+          opacity: 1;
+
+        .symbol
+          background: #F3F3F3;
+
+    .quickstart
+      +breakpoint("tablet", "max")
+        opacity: 0.3;
+        background: #A9B3BC;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+        pointer-events: none;
+
+        .symbol
+          opacity: 0.5;
+
+        .cta
+          opacity: 1;
+          pointer-events: none;
+
 
   .quickstart
     white-space normal
@@ -25,18 +62,17 @@
     animation-timing-function cubic-bezier(0.455, 0.03, 0.515, 0.955)
     animation-duration 200ms
 
+    // Default styles when carousel is not loaded
     +breakpoint("tablet", "max")
-      opacity: 0.3;
-      background: #A9B3BC;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-      pointer-events: none;
+      background-color white
+      color $color-oil
 
       .symbol
-        opacity: 0.5;
+        background-color #F3F3F3
 
       .cta
         opacity: 1;
-        pointer-events: none;
 
     .symbol
       display inline-block;
@@ -132,21 +168,3 @@
 
         .cta
           opacity: 1;
-
-  .center .quickstart
-    cursor: pointer;
-    background: white;
-    color: $color-oil;
-    pointer-events: auto;
-    opacity: 1;
-
-    .cta
-      opacity: 1;
-      pointer-events: auto;
-
-    i,
-    .symbol
-      opacity: 1;
-
-    .symbol
-      background: #F3F3F3;
