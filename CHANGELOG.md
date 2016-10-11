@@ -1,3 +1,18 @@
+## [3.9.1] - 2016-10-05
+
+### Fixed
+
+- [] Don't show center state of quickstart list in desktop view. (`Ariel Gerstein`)
+  https://github.com/auth0/tutorial-navigator/commit/d8b3383610cb865ffb0101bba1c2897f481acaac
+- [] Hide quickstart list when slider is not initialized. (`Ariel Gerstein`)
+  https://github.com/auth0/tutorial-navigator/commit/7a10cfba92262390d4e1f56254bf9b8e05d84d76
+- [] Show disabled quick start style only if carousel is loaded. (`Ariel Gerstein`)
+  https://github.com/auth0/tutorial-navigator/commit/7e02f8fb8b1bf0b468622a39c9a3c4443ef43668
+- [] Don't hide quickstarts when slider is not initialized. (`Ariel Gerstein`)
+  https://github.com/auth0/tutorial-navigator/commit/13689e5f578cdab77794fe10144172e6a64a1970
+- [] Revert styles from last commit. (`Ariel Gerstein`)
+  https://github.com/auth0/tutorial-navigator/commit/f361f0700d42a95af96a7d5f9ed7448a6c5b996a
+
 ## [3.8.0] - 2016-09-27
 
 ### Fixed
