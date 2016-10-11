@@ -18,22 +18,23 @@
   .js-carousel.owl-loaded
 
     .center .quickstart
-      cursor: pointer;
-      background: white;
-      color: $color-oil;
-      pointer-events: auto;
-      opacity: 1;
-
-      .cta
-        opacity: 1;
+      +breakpoint("tablet", "max")
+        cursor: pointer;
+        background: white;
+        color: $color-oil;
         pointer-events: auto;
-
-      i,
-      .symbol
         opacity: 1;
 
-      .symbol
-        background: #F3F3F3;
+        .cta
+          opacity: 1;
+          pointer-events: auto;
+
+        i,
+        .symbol
+          opacity: 1;
+
+        .symbol
+          background: #F3F3F3;
 
     .quickstart
       +breakpoint("tablet", "max")
