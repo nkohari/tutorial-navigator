@@ -6,9 +6,9 @@ import TutorialStore from '../stores/tutorial-store';
 import {connectToStores} from 'fluxible-addons-react';
 
 class TutorialNavigator extends React.Component {
-  
+
   render() {
-    
+
     let {quickstart, firstQuestion} = this.props;
 
     let picker = undefined;
@@ -24,7 +24,7 @@ class TutorialNavigator extends React.Component {
       picker = <QuickstartList {...this.props} />;
       question = firstQuestion;
     }
-    
+
     return (
       <div id="tutorial-navigator">
         <div className='js-tutorial-navigator'>
@@ -39,7 +39,7 @@ class TutorialNavigator extends React.Component {
       </div>
     );
   }
-  
+
 }
 
 TutorialNavigator.defaultProps = {

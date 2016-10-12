@@ -29,63 +29,60 @@ class Breadcrumbs extends React.Component {
     // top-level Documentation link.
     if (isRestricted) {
       crumbs.push(
-        <div itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem" key={index}>
+        <li itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem" key={index}>
           <a itemProp="item" key="quickstart" onClick={this.handleClick.bind(this, {quickstart})}>
             <span className="text" itemProp="name">{quickstart.title}</span>
             <meta itemProp="position" content={index} />
           </a>
-        </div>
+        </li>
       );
       index++;
     }
     else {
       crumbs.push(
-        <div itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem" key={index}>
+        <li itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem" key={index}>
           <a itemProp="item" key="base" onClick={this.handleClick.bind(this, {})}>
             <span className="text" itemProp="name">Documentation</span>
             <meta itemProp="position" content={index} />
           </a>
-        </div>
+        </li>
       );
       index++;
-      crumbs.push(<i className="icon-budicon-461" key={index + 'sep'}></i>);
       crumbs.push(
-        <div itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem" key={index}>
+        <li itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem" key={index}>
           <a itemProp="item" key="quickstart" onClick={this.handleClick.bind(this, {quickstart})}>
             <span className="text" itemProp="name">{quickstart.title}</span>
             <meta itemProp="position" content={index} />
           </a>
-        </div>
+        </li>
       );
       index++;
     }
 
     if (platform) {
-      crumbs.push(<i className="icon-budicon-461" key={index + 'sep'}></i>);
       crumbs.push(
-        <div itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem" key={index}>
+        <li itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem" key={index}>
           <a itemProp="item" key="platform" onClick={this.handleClick.bind(this, {quickstart, platform})}>
             <span className="text" itemProp="name">{platform.title}</span>
             <meta itemProp="position" content={index} />
           </a>
-        </div>
+        </li>
       );
       index++;
       if (article && platform.articles.length > 1 && !isSingleArticleMode) {
-        crumbs.push(<i className="icon-budicon-461" key={index + 'sep'}></i>);
         crumbs.push(
-          <div itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem" key={index}>
+          <li itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem" key={index}>
             <a itemProp="item" key="article" onClick={this.handleClick.bind(this, {quickstart, platform, article})}>
               <span className="text" itemProp="name">{article.title}</span>
               <meta itemProp="position" content={index} />
             </a>
-          </div>
+          </li>
         );
         index++;
       }
     }
 
-    return <div className="breadcrumbs" itemScope itemType="http://schema.org/BreadcrumbList">{crumbs}</div>;
+    return <ul className="breadcrumb" itemScope itemType="http://schema.org/BreadcrumbList">{crumbs}</ul>;
   }
 
 }
