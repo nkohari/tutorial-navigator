@@ -1,3 +1,10 @@
+## [3.9.2] - 2016-10-11
+
+### Fixed
+
+- [] Update breadcrumbs style (styles from styleguide). (`Ariel Gerstein`)
+  https://github.com/auth0/tutorial-navigator/commit/36c480af0a042c016d247594674a5fdfcc419c98
+
 ## [3.9.1] - 2016-10-05
 
 ### Fixed
